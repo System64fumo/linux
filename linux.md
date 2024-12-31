@@ -20,7 +20,7 @@ But it also means that you won't be able to use whatever feature you disabled at
 Modules are great since you can build basically everything and only load what you need and use dynamically.<br>
 However this sometimes means you have to rely on initramfs to load storage or filesystem modules.<br>
 
-Baking in modules is usually good critical or important modules such as storage, filesystems, framebuffer, ect..<br>
+Baking in modules is usually for good critical or important modules such as storage, filesystems, framebuffer, etc..<br>
 Of course baking in everything is a terrible idea as it wastes memory if you're not using something.<br>
 <br>
 
