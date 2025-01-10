@@ -19,3 +19,4 @@ Expect to see:<br>
 Start reading:<br>
 [linux](linux.md)<br>
 [initramfs](initramfs.md)<br>
+[misc](misc.md)<br>
