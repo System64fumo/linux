@@ -17,6 +17,7 @@ Expect to see:<br>
 * And hopefully more to come!<br>
 
 Start reading:<br>
-[linux](linux.md)<br>
+[bootloaders](bootloaders.md)<br>
 [initramfs](initramfs.md)<br>
+[linux](linux.md)<br>
 [misc](misc.md)<br>
