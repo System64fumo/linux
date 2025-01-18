@@ -41,7 +41,7 @@ These kernels tend to use more or less the latest version of linux available at 
 <br>
 
 # Helper script
-Linux compilation is sometimes tedious or annoying, So i wrote a [helper script](./scripts/kbuild.sh) to streamline a bit of that workflow.<br>
+Linux compilation is sometimes tedious or annoying, So i wrote a [helper script](../scripts/kbuild.sh) to streamline a bit of that workflow.<br>
 
 ### Functions:
 * build - builds the kernel

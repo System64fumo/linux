@@ -44,7 +44,7 @@ umount /proc
 exec switch_root /root /sbin/init
 ```
 7. Be sure to `chmod +x ./init` otherwise it won't work
-8. `cd ..` Then use the [provided script](scripts/initramfs.sh) to create and compress the initramfs.
+8. `cd ..` Then use the [provided script](../scripts/initramfs.sh) to create and compress the initramfs.
 
 And you're done!<br>
 This file can be now used to initialize linux.
