@@ -45,8 +45,8 @@ sed -i '/^#\[\(aur\)\]/s/^#//' /etc/pacman.conf
 sed -i '/^#\(Include\)/s/^#//' /etc/pacman.conf
 
 # Install stuff
-pacman -Syu --noconfirm base-devel opendoas busybox pipewire{,-pulse,-alsa} wireplumber \
-labwc swaybg foot nemo ttf-liberation polkit-gnome gnome-keyring git
+pacman -Syu --noconfirm base-devel opendoas busybox pipewire{,-pulse,-alsa,-jack} wireplumber \
+labwc swaybg foot nemo ttf-{liberation,dejavu,font-awesome} otf-ipafont polkit-gnome gnome-keyring git xdg-user-dirs firefox geany htop
 pacman -Rn --noconfirm base-devel sudo
 pacman -U --noconfirm /packages/*
 rm -rf /packages
@@ -92,5 +92,14 @@ su "$UNAME" -c "cd /tmp;git clone https://aur.archlinux.org/yay-bin.git;cd yay-b
 # Install AUR packages
 su "$UNAME" -c "yay -S --noconfirm sys{menu,hud,bar,power,lock,shell} frogfm mathfairy-git"
 
+#TODO: Colloid theme needs to be configured (to not include the additional styles or colors)
+#su "$UNAME" -c "yay -S --noconfirm colloid-{gtk-theme,cursors,icon-theme}-git"
+
+# Configure user
+# TODO: This should run post gui setup
+su "$UNAME" -c "gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close';gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Dark'"
+
 # Cleanup
+rm -rf /tmp/*
+rm -rf /home/$UNAME/.cache
 pkill -9 gpg-agent

@@ -36,4 +36,8 @@ umount -fR $MOUNTPATH/{proc,sys,dev}
 sync
 umount -fR $MOUNTPATH
 
+echo "Re-Compressing... (This may take a while)"
+btrfs filesystem defrag -czstd $ROOTFSFILE
 mv $ROOTFSFILE ./rootfs.img
+
+echo "Done!"
