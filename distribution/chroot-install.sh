@@ -45,8 +45,10 @@ sed -i '/^#\[\(aur\)\]/s/^#//' /etc/pacman.conf
 sed -i '/^#\(Include\)/s/^#//' /etc/pacman.conf
 
 # Install stuff
-pacman -Syu --noconfirm base-devel opendoas busybox pipewire{,-pulse,-alsa,-jack} wireplumber \
-labwc swaybg foot nemo ttf-{liberation,dejavu,font-awesome} otf-ipafont polkit-gnome gnome-keyring git xdg-user-dirs firefox geany htop
+pacman -Syu --noconfirm base-devel opendoas busybox pipewire{,-pulse,-alsa,-jack} \
+wireplumber labwc swaybg foot nemo ttf-{liberation,dejavu,font-awesome} otf-ipafont \
+polkit-gnome gnome-keyring git xdg-user-dirs firefox geany htop networkmanager blueman \
+pavucontrol mpv
 pacman -Rn --noconfirm base-devel sudo
 pacman -U --noconfirm /packages/*
 rm -rf /packages
@@ -82,9 +84,12 @@ echo "permit nopass :wheel" > /etc/doas.conf
 #permit persist :wheel" > /etc/doas.conf
 
 # Create default account
+# TODO: This account should only be used for initial setup and should be deleted afterwards
+# For now it can be used to test the setup
 useradd -m $UNAME \
 -G wheel,video,audio,input,disk,storage \
--p $(perl -e "print crypt($PASSWD,aa)")
+-p $(perl -e "print crypt($PASSWD,aa)") \
+-u 1001 -g 1001
 
 # Install yay
 su "$UNAME" -c "cd /tmp;git clone https://aur.archlinux.org/yay-bin.git;cd yay-bin;makepkg -si --noconfirm"
@@ -96,8 +101,13 @@ su "$UNAME" -c "yay -S --noconfirm sys{menu,hud,bar,power,lock,shell} frogfm mat
 #su "$UNAME" -c "yay -S --noconfirm colloid-{gtk-theme,cursors,icon-theme}-git"
 
 # Configure user
-# TODO: This should run post gui setup
-su "$UNAME" -c "gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close';gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Dark'"
+# TODO: This should run post GUI setup
+su "$UNAME" -c "gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close';gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Dark';gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+
+# Move files
+mv /files/.config/* /home/$UNAME/.config/
+mv /files/.bash_profile /home/$UNAME/.bash_profile
+chown -R $UNAME:$UNAME /home/$UNAME
 
 # Cleanup
 rm -rf /tmp/*

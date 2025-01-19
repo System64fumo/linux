@@ -24,6 +24,9 @@ mount "$ROOTFSFILE" "$MOUNTPATH" -o rw,noatime,compress=zstd
 echo "Downloading rootfs file..."
 curl -#L "$ROOTFSURL" --keepalive-time 120 | bsdtar -xpC $MOUNTPATH/
 
+echo "Copying files..."
+cp -r ./files $MOUNTPATH/files
+
 echo "Chrooting..."
 mount -t proc /proc $MOUNTPATH/proc/
 mount -t sysfs /sys $MOUNTPATH/sys/

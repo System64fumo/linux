@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Environment
+dbus-update-activation-environment --all &
+
+# Graphical shell
+sysshell &
+
+# Desktop icons
+#frog -d &
+
+# Background
+swaybg -m fill -i ~/Pictures/wallpaper.jpg &
+
+# Terminal
+foot -s -S -d none &
+
+# Auth
+gnome-keyring-daemon &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
