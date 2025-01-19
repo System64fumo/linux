@@ -1,0 +1,29 @@
+# Maintainer: Your Name <your.email@example.com>
+
+pkgname=sysv-init
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Busybox sysvinit"
+arch=('aarch64')
+url="https://github.com/System64fumo/rc-scripts"
+license=('WTFPL')
+depends=('busybox')
+provides=('init-elogind' 'init-logind' 'svc-manager' 'init-dbus' 'init-udev' 'init-rc')
+makedepends=('git')
+source=("git+https://github.com/System64fumo/rc-scripts.git")
+sha256sums=('SKIP')
+
+package() {
+	cd "$srcdir/rc-scripts"
+
+	# Install configuration
+	mkdir -p "$pkgdir/etc" "$pkgdir/usr/bin"
+	cp -r rc.d "$pkgdir/etc/rc.d"
+	install -Dm755 inittab "$pkgdir/etc/inittab"
+
+	# Configure busybox for sysvinit
+	ln -s /usr/bin/busybox "$pkgdir/usr/bin/init"
+	ln -s /usr/bin/busybox "$pkgdir/usr/bin/poweroff"
+	ln -s /usr/bin/busybox "$pkgdir/usr/bin/reboot"
+}
+
