@@ -244,10 +244,13 @@
       <action name="PreviousWindow" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="alacritty" />
+      <action name="Execute" command="footclient" />
     </keybind>
-    <keybind key="A-F3">
-      <action name="Execute" command="bemenu-run" />
+    <keybind key="W-e">
+      <action name="Execute" command="pkill -34 sysshell" />
+    </keybind>
+    <keybind key="W-p">
+      <action name="Execute" command="pkill -39 sysshell" />
     </keybind>
     <keybind key="A-F4">
       <action name="Close" />
@@ -283,13 +286,13 @@
       <action name="ShowMenu" menu="client-menu" atCursor="no" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
-      <action name="Execute" command="amixer sset Master 5%-" />
+      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0" />
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
-      <action name="Execute" command="amixer sset Master 5%+" />
+      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0" />
     </keybind>
     <keybind key="XF86_AudioMute">
-      <action name="Execute" command="amixer sset Master toggle" />
+      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
       <action name="Execute" command="brightnessctl set +10%" />

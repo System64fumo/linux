@@ -1,0 +1,57 @@
+#syslock,
+#syslock-empty-window {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Lock screen */
+#syslock .lock_screen {
+}
+
+#syslock .time {
+	margin-top: 200px;
+	text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.75);
+	font-size: 96px;
+	text-shadow: 0px 3px 25px rgba(0, 0, 0, 0.75);
+	color: alpha(currentcolor, 0.9);
+}
+
+#syslock .date {
+	font-size: 18px;
+	text-shadow: 0px 3px 25px rgba(0, 0, 0, 0.75);
+	color: alpha(currentcolor, 0.75);
+}
+
+/* Login screen */
+#syslock .login_screen {
+	background: rgba(0, 0, 0, 0.75);
+}
+
+#syslock .image_profile {
+	background-color: alpha(@theme_bg_color, 0.75);
+	border: 3px solid @theme_fg_color;
+	border-radius: 50%;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+	margin: 10px;
+}
+
+#syslock .label_username {
+	font-size: 22px;
+	margin: 10px;
+	text-shadow: 3px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+#syslock .entry_password {
+	background: rgba(0, 0, 0, 0.5);
+	border: 1px solid @borders;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+	margin: 10px;
+	outline: unset;
+}
+
+#syslock .entry_password:hover {
+	background: rgba(20, 20, 20, 0.5);
+}
+
+#syslock .label_error {
+	color: rgb(255,75,50);
+}

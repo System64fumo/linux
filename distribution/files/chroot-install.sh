@@ -48,7 +48,7 @@ sed -i '/^#\(Include\)/s/^#//' /etc/pacman.conf
 pacman -Syu --noconfirm base-devel opendoas busybox pipewire{,-pulse,-alsa,-jack} \
 wireplumber labwc swaybg foot nemo ttf-{liberation,dejavu,font-awesome} otf-ipafont \
 polkit-gnome gnome-keyring git xdg-user-dirs firefox geany htop networkmanager blueman \
-pavucontrol mpv
+pavucontrol mpv cage
 pacman -Rn --noconfirm base-devel sudo
 pacman -U --noconfirm /packages/*
 rm -rf /packages
@@ -89,10 +89,13 @@ echo "permit nopass :wheel" > /etc/doas.conf
 useradd -m $UNAME \
 -G wheel,video,audio,input,disk,storage \
 -p $(perl -e "print crypt($PASSWD,aa)") \
--u 1001 -g 1001
+-u 1001
 
 # Install yay
 su "$UNAME" -c "cd /tmp;git clone https://aur.archlinux.org/yay-bin.git;cd yay-bin;makepkg -si --noconfirm"
+
+# Configure yay
+su "$UNAME" -c "yay --save --editor nano --answerdiff no --answerclean no --cleanafter --removemake"
 
 # Install AUR packages
 su "$UNAME" -c "yay -S --noconfirm sys{menu,hud,bar,power,lock,shell} frogfm mathfairy-git"
@@ -102,7 +105,18 @@ su "$UNAME" -c "yay -S --noconfirm sys{menu,hud,bar,power,lock,shell} frogfm mat
 
 # Configure user
 # TODO: This should run post GUI setup
-su "$UNAME" -c "gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close';gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Dark';gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+su "$UNAME" -c "gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close';gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark';gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+
+# Replace init system
+chmod -R 777 /files/packages
+rm /usr/bin/init
+su "$UNAME" -c "cd /files/packages/sysvinit;(echo y;echo y;echo y;echo y;echo y) | makepkg -si"
+ln -s /usr/bin/busybox /usr/bin/fbsplash
+
+# Setup auto login for setup
+sed -i "s/root/$UNAME/g" /etc/inittab
+
+# TODO: Remember to use kill -HUP 1 init to reload /etc/inittab post GUI setup
 
 # Move files
 mv /files/.config/* /home/$UNAME/.config/
@@ -112,4 +126,6 @@ chown -R $UNAME:$UNAME /home/$UNAME
 # Cleanup
 rm -rf /tmp/*
 rm -rf /home/$UNAME/.cache
+rm -rf /files
+rm -rf /run/{dinit.d,sudo}
 pkill -9 gpg-agent

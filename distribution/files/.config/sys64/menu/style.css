@@ -1,0 +1,62 @@
+#sysmenu {
+	background: transparent;
+}
+
+#sysmenu .entry_search {
+	margin: 25px 70px 25px 70px;
+	border-radius: 2px;
+	outline: unset;
+	min-height: 45px;
+}
+
+#sysmenu .revealer_search {
+}
+
+#sysmenu .box_layout {
+	transition: margin 0.25s ease-in-out;
+	background: alpha(@theme_base_color, 0.75);
+	border: 1px solid rgba(128, 128, 128, 0.1);
+	margin-top: 870px;
+	margin-bottom: -870px;
+	border-radius: 4px;
+}
+
+#sysmenu.visible .box_layout {
+	margin-top: 0px;
+	margin-bottom: 10px;
+	transition: margin 0.25s ease-in;
+}
+
+#sysmenu .flowbox_recent {
+}
+
+#sysmenu .box_layout_inner {
+	border: 1px solid rgba(128, 128, 128, 0.1);
+	background: rgba(255, 255, 255, 0.025);
+}
+
+#sysmenu flowboxchild {
+	margin: 0px 20px 0px 20px;
+}
+
+#sysmenu .dock {
+	background: alpha(@theme_base_color, 0.5);
+	border: 1px solid @borders;
+	border-radius: 25px;
+	margin: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+#sysmenu .dock_item {
+	border-radius: 20px;
+	margin: 5px 2px 5px 2px;
+	padding: 5px;
+}
+#sysmenu .dock_item:hover {
+	background: alpha(CurrentColor, 0.1);
+}
+#sysmenu .dock_item:nth-child(1) {
+	margin-left: 5px;
+}
+#sysmenu .dock_item:nth-last-child(1) {
+	margin-right: 5px;
+}

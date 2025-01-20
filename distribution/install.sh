@@ -25,6 +25,7 @@ echo "Downloading rootfs file..."
 curl -#L "$ROOTFSURL" --keepalive-time 120 | bsdtar -xpC $MOUNTPATH/
 
 echo "Copying files..."
+chmod +x ./files/chroot-install.sh
 cp -r ./files $MOUNTPATH/files
 
 echo "Chrooting..."
@@ -32,7 +33,7 @@ mount -t proc /proc $MOUNTPATH/proc/
 mount -t sysfs /sys $MOUNTPATH/sys/
 mount --rbind /dev $MOUNTPATH/dev/
 
-chroot $MOUNTPATH
+chroot $MOUNTPATH /files/chroot-install.sh
 
 # Unmount
 umount -fR $MOUNTPATH/{proc,sys,dev}
@@ -40,7 +41,7 @@ sync
 umount -fR $MOUNTPATH
 
 echo "Re-Compressing... (This may take a while)"
-btrfs filesystem defrag -czstd $ROOTFSFILE
+btrfs filesystem defrag -czstd "$ROOTFSFILE"
 mv $ROOTFSFILE ./rootfs.img
 
 echo "Done!"

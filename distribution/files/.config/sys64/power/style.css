@@ -1,0 +1,36 @@
+#syspower {
+	background: rgba(0, 0, 0, 0.75);
+}
+
+#syspower .primary_window {
+}
+
+#syspower .empty_window {
+}
+
+#syspower .box_layout {
+}
+
+#syspower .label_status {
+}
+
+#syspower .box_buttons {
+}
+
+#syspower .progressbar_status {
+}
+
+#syspower .button_shutdown {
+}
+#syspower .button_reboot {
+}
+#syspower .button_logout {
+}
+#syspower .button_cancel {
+}
+
+#syspower button {
+	border: 1px solid @borders;
+	background: alpha(@theme_bg_color, 0.05);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}

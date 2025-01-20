@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Audio server
+/etc/rc.d/service start audio
+
 # Environment
 dbus-update-activation-environment --all &
 

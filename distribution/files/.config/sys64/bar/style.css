@@ -1,0 +1,180 @@
+@import url('events.css');
+
+#sysbar {
+	background: @theme_bg_color;
+	border-top: 1px solid @borders;
+	/*box-shadow: 0px 0px 10px black;
+	margin-bottom: 10px;*/
+}
+
+#sysbar .centerbox_main {
+}
+
+#sysbar_overlay {
+	background: transparent;
+}
+
+#sysbar_overlay .grid_widgets_start,
+#sysbar_overlay .grid_widgets_end {
+	background: alpha(@theme_base_color, 0.9);
+	margin: 10px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	border: 1px solid @borders;
+	border-radius: 10px;
+}
+
+#sysbar .module {
+	border-radius: 4px;
+}
+
+#sysbar .module:hover {
+	background: alpha(CurrentColor, 0.1);
+}
+
+#sysbar .tray_container {
+}
+
+#sysbar .tray_item {
+	padding: 10px;
+}
+#sysbar .tray_item:hover {
+	background: alpha(currentcolor, 0.1);
+	border-radius: 4px;
+}
+
+#sysbar .context_menu contents {
+	background: @insensitive_bg_color;
+	min-width: 100px;
+	padding: 5px;
+}
+#sysbar .context_menu flowboxchild {
+	padding: 10px;
+}
+#sysbar .context_menu flowboxchild:hover {
+	background: alpha(currentcolor, 0.1);
+}
+
+#sysbar .module_taskbar flowboxchild {
+	min-height: 48px;
+	min-width: 48px;
+	color: alpha(@theme_fg_color, 0.75);
+	padding: 0px;
+	border-radius: 0px;
+}
+#sysbar .module_taskbar flowboxchild:selected {
+	background: alpha(@theme_fg_color, 0.1);
+	color: unset;
+}
+#sysbar .module_taskbar flowboxchild:hover {
+	background: alpha(@theme_fg_color, 0.05);
+}
+
+#sysbar_overlay calendar {
+	border-radius: 10px;
+	border: unset;
+}
+#sysbar_overlay calendar > grid {
+	margin: 0px;
+}
+#sysbar_overlay calendar > header {
+	border-radius: 10px 10px 0px 0px;
+	background: alpha(@insensitive_bg_color, 0.5);
+	padding: 5px;
+}
+#sysbar_overlay calendar > header >:nth-child(1),
+#sysbar_overlay calendar > header >:nth-child(4) {
+	border-radius: 4px 0px 0px 4px;
+}
+#sysbar_overlay calendar > header >:nth-child(3),
+#sysbar_overlay calendar > header >:nth-child(6) {
+	border-radius: 0px 4px 4px 0px;
+}
+#sysbar_overlay calendar .day-number {
+	min-height: 30px;
+}
+
+#sysbar_overlay .notification {
+	background: alpha(currentcolor, 0.05);
+	border: 1px solid alpha(currentColor, 0.1);
+	border-radius: 4px;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+	margin: 0px 10px 10px 10px;
+	padding: 5px;
+	min-height: 70px;
+}
+#sysbar_overlay .notification .summary {
+	font-size: 14px;
+	font-weight: 500;
+}
+#sysbar_overlay .notification .body {
+	font-size: 13px;
+}
+#sysbar .popover_notifications > * {
+	background: transparent;
+	border: unset;
+	box-shadow: unset;
+	margin: unset;
+	padding: unset;
+}
+#sysbar .popover_notifications .notification {
+	border: 1px solid alpha(currentColor, 0.1);
+	background: alpha(mix(@insensitive_bg_color, currentColor, 0.05), 0.9);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	margin: 10px 10px 0px 10px;
+	min-height: 70px;
+}
+
+#sysbar_overlay .event_label {
+	padding: 10px;
+}
+
+#sysbar_overlay .day-number:checked {
+	box-shadow: 0px -2px inset rgb(255, 0, 100);
+	border-radius: 4px 4px 0px 0px;
+}
+
+#sysbar_overlay .widget_mpris {
+	background: alpha(currentcolor, 0.05);
+	border: 1px solid @borders;
+	border-radius: 4px;
+	margin: 7px 10px 10px 10px;
+}
+
+#sysbar_overlay .widget_mpris .image_album_art {
+	background: alpha(currentcolor, 0.05);
+	margin: 10px;
+	border-radius: 10px;
+}
+
+#sysbar_overlay .widget_mpris .label_title {
+	margin-top: 10px;
+}
+
+#sysbar_overlay .widget_mpris .box_controls {
+	margin-bottom: 10px;
+}
+#sysbar_overlay .widget_controls {
+	margin: 5px 5px 0px 5px;
+}
+#sysbar_overlay .widget_controls .control {
+	background: alpha(currentcolor, 0.05);
+	border: 1px solid @borders;
+	border-radius: 4px;
+	min-height: 40px;
+}
+#sysbar_overlay .widget_controls .control >:nth-child(1) {
+	border-radius: 4px 0px 0px 4px;
+}
+#sysbar_overlay .widget_controls .control >:nth-child(2) {
+	border-radius: 0px 4px 4px 0px;
+	min-width: 30px;
+}
+
+#sysbar_overlay .widget_volume,
+#sysbar_overlay .widget_backlight {
+	background: alpha(currentcolor, 0.05);
+	border: 1px solid @borders;
+	border-radius: 4px;
+	padding: 5px;
+	margin: 0px 10px 10px 10px;
+}

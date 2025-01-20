@@ -47,19 +47,16 @@
     <action name="Execute" command="firefox" />
   </item>
   <item label="File browser">
-    <action name="Execute" command="frog" />
+    <action name="Execute" command="nemo" />
   </item>
   <item label="Terminal">
-    <action name="Execute" command="foot" />
+    <action name="Execute" command="footclient" />
   </item>
   <item label="Reconfigure">
     <action name="Reconfigure" />
   </item>
   <item label="Exit">
     <action name="Exit" />
-  </item>
-  <item label="Poweroff">
-    <action name="Execute" command="systemctl -i poweroff" />
   </item>
 </menu>
 
