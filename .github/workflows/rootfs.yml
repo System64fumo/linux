@@ -3,7 +3,7 @@ on: [push, pull_request]
 jobs:
   aarch64_job:
     # The host should always be Linux
-    runs-on: archarm_latest
+    runs-on: ubuntu-24.04-arm
     name: Build on archarm_latest aarch64
     steps:
       - uses: actions/checkout@v4
