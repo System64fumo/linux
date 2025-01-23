@@ -8,13 +8,13 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
       - name: Make script executable
-        run: chmod +x linux/distribution/install.sh
+        run: chmod +x ./distribution/install.sh
       - name: Run commands
         run: |
-            cd distribution
+            cd ./distribution
             sudo ./install.sh
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: rootfs
-          path: distribution/rootfs.img
+          path: ./distribution/rootfs.img
