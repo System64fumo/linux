@@ -2,28 +2,10 @@ on: [push, pull_request]
 
 jobs:
   aarch64_job:
-    # The host should always be Linux
     runs-on: ubuntu-24.04-arm
     name: Build on archarm_latest aarch64
     steps:
-      - uses: actions/checkout@v4
-      - uses: uraimo/run-on-arch-action@v2
-        name: Run commands
-        id: runcmd
-        with:
-          arch: aarch64
-          distro: archarm_latest
-
-          # Not required, but speeds up builds by storing container images in
-          # a GitHub package registry.
-          githubToken: ${{ github.token }}
-
-          # Set an output parameter `uname` for use in subsequent steps
-          run: |
-            uname -a
-            echo ::set-output name=uname::$(uname -a)
-
-      - name: Get the output
-        # Echo the `uname` output parameter from the `runcmd` step
-        run: |
-          echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - name: Run commands
+        run: uname -a
