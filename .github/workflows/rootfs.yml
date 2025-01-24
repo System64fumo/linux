@@ -1,4 +1,6 @@
-on: [push, pull_request]
+on: 
+  push:
+    paths: ['distribution/**']
 
 jobs:
   aarch64_job:
