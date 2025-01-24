@@ -1,5 +1,9 @@
 if [[ $(tty) = /dev/tty1 ]]; then
-	dbus-run-session -- cage -dsm last -- /opt/setup/sysinstall
+	dbus-run-session -- cage -dsm last -- sh -c "
+	gsettings set org.gnome.desktop.interface gtk-theme Colloid-Grey-Dark
+	gsettings set org.gnome.desktop.interface icon-theme Colloid-Grey-Dark
+	gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+	/opt/setup/sysinstall"
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc

@@ -39,10 +39,4 @@ chroot $MOUNTPATH /opt/setup/chroot-install.sh
 umount -fR $MOUNTPATH
 sync
 
-#echo "Re-Compressing... (This may take a while)"
-#btrfs filesystem defrag -czstd "$ROOTFSFILE"
-#mv $ROOTFSFILE ./rootfs.img
-
-echo "TODO: shrink image down from 4gb to it's actual used size (2.3 ish gigs)"
-
 echo "Done!"
