@@ -1,8 +1,8 @@
 #!/bin/sh
 
 ROOTFSURL=""
-ROOTFSFILE=/tmp/rootfs.img
-MOUNTPATH=/tmp/mount
+ROOTFSFILE=./rootfs.img
+MOUNTPATH=./mount
 
 # Request root access
 if [[ "$(whoami)" != "root" ]]; then
@@ -22,26 +22,27 @@ mkdir $MOUNTPATH
 mount "$ROOTFSFILE" "$MOUNTPATH" -o rw,noatime,compress=zstd
 
 echo "Downloading rootfs file..."
-curl -#L "$ROOTFSURL" --keepalive-time 120 | bsdtar -xpC $MOUNTPATH/
+curl -#L "$ROOTFSURL" --keepalive-time 120 | tar -xpJC $MOUNTPATH/
 
 echo "Copying files..."
 chmod +x ./files/chroot-install.sh
-cp -r ./files $MOUNTPATH/files
+cp -r ./files $MOUNTPATH/opt/setup
 
 echo "Chrooting..."
 mount -t proc /proc $MOUNTPATH/proc/
 mount -t sysfs /sys $MOUNTPATH/sys/
 mount --rbind /dev $MOUNTPATH/dev/
 
-chroot $MOUNTPATH /files/chroot-install.sh
+chroot $MOUNTPATH /opt/setup/chroot-install.sh
 
 # Unmount
-umount -fR $MOUNTPATH/{proc,sys,dev}
-sync
 umount -fR $MOUNTPATH
+sync
 
-echo "Re-Compressing... (This may take a while)"
-btrfs filesystem defrag -czstd "$ROOTFSFILE"
-mv $ROOTFSFILE ./rootfs.img
+#echo "Re-Compressing... (This may take a while)"
+#btrfs filesystem defrag -czstd "$ROOTFSFILE"
+#mv $ROOTFSFILE ./rootfs.img
+
+echo "TODO: shrink image down from 4gb to it's actual used size (2.3 ish gigs)"
 
 echo "Done!"

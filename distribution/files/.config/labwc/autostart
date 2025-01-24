@@ -13,7 +13,7 @@ sysshell &
 #frog -d &
 
 # Background
-swaybg -m fill -i ~/Pictures/wallpaper.jpg &
+swaybg -m fill -i /opt/setup/wallpapers/dark.jpg &
 
 # Terminal
 foot -s -S -d none &

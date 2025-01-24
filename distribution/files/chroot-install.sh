@@ -24,11 +24,11 @@ sed -i 's/#Color/Color/g' /etc/pacman.conf
 sed -i 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
 sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 
-mkdir -m 777 /tmp/cache
+mkdir -m 777 /tmp/cache /opt/setup
 
 pacman-key --init
 pacman-key --populate
-pacman -Syu --noconfirm artix-archlinux-support
+pacman -Syu --noconfirm --disable-download-timeout artix-archlinux-support
 
 # Fix arch trust issues (https://archlinuxarm.org/forum/viewtopic.php?t=16769)
 pacman-key --finger 68B3537F39A313B3E574D06777193F152BDBE6A6 2>/dev/null | grep marginal >/dev/null 2>&1 \
@@ -45,10 +45,10 @@ sed -i '/^#\[\(aur\)\]/s/^#//' /etc/pacman.conf
 sed -i '/^#\(Include\)/s/^#//' /etc/pacman.conf
 
 # Install stuff
-pacman -Syu --noconfirm base-devel opendoas busybox pipewire{,-pulse,-alsa,-jack} \
+pacman -Syu --noconfirm --disable-download-timeout base-devel opendoas busybox pipewire{,-pulse,-alsa,-jack} \
 wireplumber labwc swaybg foot nemo ttf-{liberation,dejavu,font-awesome} otf-ipafont \
 polkit-gnome gnome-keyring git xdg-user-dirs firefox geany htop networkmanager blueman \
-pavucontrol mpv cage
+pavucontrol mpv cage rtkit sassc
 pacman -Rn --noconfirm base-devel sudo
 pacman -U --noconfirm /packages/*
 rm -rf /packages
@@ -92,40 +92,68 @@ useradd -m $UNAME \
 -u 1001
 
 # Install yay
-su "$UNAME" -c "cd /tmp;git clone https://aur.archlinux.org/yay-bin.git;cd yay-bin;makepkg -si --noconfirm"
+su "$UNAME" -c "
+git clone https://aur.archlinux.org/yay-bin /tmp/yay-bin
+cd /tmp/yay-bin
+makepkg -si --noconfirm"
 
 # Configure yay
 su "$UNAME" -c "yay --save --editor nano --answerdiff no --answerclean no --cleanafter --removemake"
 
 # Install AUR packages
-su "$UNAME" -c "yay -S --noconfirm sys{menu,hud,bar,power,lock,shell} frogfm mathfairy-git"
-
-#TODO: Colloid theme needs to be configured (to not include the additional styles or colors)
-#su "$UNAME" -c "yay -S --noconfirm colloid-{gtk-theme,cursors,icon-theme}-git"
+su "$UNAME" -c "echo y | yay -S --noconfirm --disable-download-timeout sys{menu,hud,bar,board,power,lock,shell} frogfm mathfairy-git"
 
 # Configure user
 # TODO: This should run post GUI setup
-su "$UNAME" -c "gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close';gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark';gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+su "$UNAME" -c "
+gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Grey-Dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Colloid-Grey-Dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 
 # Replace init system
-chmod -R 777 /files/packages
+chmod -R 777 /opt/setup/packages
 rm /usr/bin/init
-su "$UNAME" -c "cd /files/packages/sysvinit;(echo y;echo y;echo y;echo y;echo y) | makepkg -si"
+su "$UNAME" -c "
+cd /opt/setup/packages/sysvinit
+(echo y;echo y;echo y;echo y;echo y) | makepkg -si"
 ln -s /usr/bin/busybox /usr/bin/fbsplash
 
 # Setup auto login for setup
 sed -i "s/root/$UNAME/g" /etc/inittab
 
+# Install GUI stuff
+su "$UNAME" -c "
+git clone https://www.github.com/system64fumo/sysinstall /tmp/sysinstall; cd /tmp/sysinstall
+make -j8
+doas mv ./build/sysinstall /opt/setup"
+
+su "$UNAME" -c "
+git clone https://github.com/vinceliuice/Colloid-gtk-theme --single-branch --depth 1 /tmp/gtk-theme
+cd /tmp/gtk-theme
+./install.sh -c dark -c light -s standard -t grey --tweaks normal --tweaks black
+doas mv ~/.themes/* /usr/share/themes/"
+
+su "$UNAME" -c "
+git clone --single-branch --depth 1 https://github.com/vinceliuice/Colloid-icon-theme /tmp/icon-theme
+cd /tmp/icon-theme
+./install.sh -s default -t grey
+cd ./cursors
+./install.sh
+doas mv ~/.local/share/icons/* /usr/share/icons/"
+
 # TODO: Remember to use kill -HUP 1 init to reload /etc/inittab post GUI setup
 
 # Move files
-mv /files/.config/* /home/$UNAME/.config/
-mv /files/.bash_profile /home/$UNAME/.bash_profile
+mv /opt/setup/.bash_profile_setup /home/$UNAME/.bash_profile
+#mv /files/.config/* /home/$UNAME/.config/
+#mv /files/.bash_profile_user /home/$UNAME/.bash_profile
 chown -R $UNAME:$UNAME /home/$UNAME
 
 # Cleanup
+pacman -Rns --noconfirm sassc
 rm -rf /tmp/*
 rm -rf /home/$UNAME/.cache
-rm -rf /files
+rm -rf /opt/setup/packages
 rm -rf /run/{dinit.d,sudo}
 pkill -9 gpg-agent

@@ -1,0 +1,5 @@
+if [[ $(tty) = /dev/tty1 ]]; then
+	dbus-run-session -- cage -dsm last -- /opt/setup/sysinstall
+fi
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
