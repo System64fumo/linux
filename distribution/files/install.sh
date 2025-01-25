@@ -30,12 +30,6 @@ doas mv /opt/setup/.config/* /home/$USERNAME/.config/
 doas mv /home/setup/.config/* /home/$USERNAME/.config/
 doas chown $USERNAME:$USERNAME -R /home/$USERNAME
 
-echo "Setting theme"
-doas su "$USERNAME" -c "gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'"
-doas su "$USERNAME" -c "gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Grey-Dark'"
-doas su "$USERNAME" -c "gsettings set org.gnome.desktop.interface icon-theme 'Colloid-Grey-Dark'"
-doas su "$USERNAME" -c "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
-
 echo "Setting up autologin"
 doas sed -i "s/setup/$USERNAME/g" /etc/inittab
 doas mv /opt/setup/.bash_profile_user /home/$USERNAME/.bash_profile

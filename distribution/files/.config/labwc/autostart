@@ -1,5 +1,11 @@
 #!/bin/sh
 
+gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Grey-Dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Colloid-Grey-Dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+sed -i '3,8d' ~/.config/labwc/autostart
+
 # Audio server
 /etc/rc.d/service start audio
 
