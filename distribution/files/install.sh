@@ -6,6 +6,14 @@ FULLUSER="$3"
 USERNAME="$4"
 PASSWORD="$5"
 
+echo "Setting language"
+doas sed -i "s/#$LANGUAGE/$LANGUAGE/g" /etc/locale.gen
+echo "LANG=$LANGUAGE.UTF-8" doas tee | /etc/locale.conf
+locale-gen &
+
+echo "Setting timezone"
+doas ln -s /usr/share/zoneinfo/$TIMEZONE /etc/localtime
+
 echo "Creating user"
 doas useradd -m\
  "$USERNAME"\
@@ -13,14 +21,14 @@ doas useradd -m\
  -p $(perl -e "print crypt($PASSWORD,aa)")\
  -u 1000
 
-doas su "$USERNAME" -c "xdg-user-dirs-update"
+doas su "$USERNAME" -c "xdg-user-dirs-update" &
 
-doas chfn -f "$FULLUSER" "$USERNAME"
+doas chfn -f "$FULLUSER" "$USERNAME" &
 
 echo "Moving files"
-doas mv /opt/setup/.config /home/$USERNAME/.config
+doas mv /opt/setup/.config/* /home/$USERNAME/.config/
 doas mv /home/setup/.config/* /home/$USERNAME/.config/
-doas chown $USERNAME:$USERNAME /home/$USERNAME
+doas chown $USERNAME:$USERNAME -R /home/$USERNAME
 
 echo "Setting theme"
 doas su "$USERNAME" -c "gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'"
@@ -33,12 +41,7 @@ doas sed -i "s/setup/$USERNAME/g" /etc/inittab
 doas mv /opt/setup/.bash_profile_user /home/$USERNAME/.bash_profile
 doas pkill -1 init
 
-echo "Setting locale"
-doas sed -i "s/#$LANGUAGE/$LANGUAGE/g" /etc/locale.gen
-echo "LANG=$LANGUAGE.UTF-8" doas tee | /etc/locale.conf
-locale-gen
-doas ln -s /usr/share/zoneinfo/$TIMEZONE /etc/localtime
-
+wait
 echo "Done!"
 doas rm -rf /tmp/.X11-unix
 doas rm -rf /run/user/1000/*
