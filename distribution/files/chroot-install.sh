@@ -22,7 +22,7 @@ sed -i 's/#Color/Color/g' /etc/pacman.conf
 sed -i 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
 sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 
-mkdir -m 777 /tmp/cache /opt/setup
+mkdir -m 777 /tmp/cache
 
 pacman-key --init >> /tmp/pacman.log
 pacman-key --populate >> /tmp/pacman.log
@@ -30,9 +30,7 @@ pacman -Syu --noconfirm --disable-download-timeout artix-archlinux-support >> /t
 
 # Fix arch trust issues (https://archlinuxarm.org/forum/viewtopic.php?t=16769)
 echo "Fixing pacman keys.."
-pacman-key --finger 68B3537F39A313B3E574D06777193F152BDBE6A6 2>/dev/null | grep marginal >/dev/null 2>&1 \
-&& pacman-key --lsign-key 68B3537F39A313B3E574D06777193F152BDBE6A6 >/dev/null 2>&1 \
-|| true
+pacman-key --lsign-key 68B3537F39A313B3E574D06777193F152BDBE6A6 >> /tmp/pacman.log
 pacman-key --populate archlinuxarm >> /tmp/pacman.log
 
 # Configure arch repos
@@ -119,6 +117,9 @@ doas mv ~/.local/share/icons/* /usr/share/icons/"
 # Move files
 mv /opt/setup/.bash_profile_setup /home/setup/.bash_profile
 chown -R setup:setup /home/setup
+
+# Store time on disk
+/etc/rc.d/service stop time
 
 # Cleanup
 pacman -Rns --noconfirm sassc >> /tmp/pacman.log
