@@ -249,6 +249,9 @@
     <keybind key="W-e">
       <action name="Execute" command="pkill -34 sysshell" />
     </keybind>
+    <keybind key="W-l">
+      <action name="Execute" command="pkill -35 sysshell" />
+    </keybind>
     <keybind key="W-p">
       <action name="Execute" command="pkill -39 sysshell" />
     </keybind>

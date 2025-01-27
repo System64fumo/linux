@@ -45,7 +45,7 @@ echo "Installing and updating packages.."
 pacman -Syu --noconfirm --disable-download-timeout base-devel opendoas busybox pipewire{,-pulse,-alsa,-jack} \
 wireplumber labwc swaybg foot nemo ttf-{liberation,dejavu,font-awesome} otf-ipafont \
 polkit-gnome gnome-keyring git xdg-user-dirs firefox geany htop networkmanager blueman \
-pavucontrol mpv cage rtkit sassc dropbear >> /tmp/pacman.log 2>&1
+pavucontrol mpv cage rtkit sassc dropbear alsa-utils >> /tmp/pacman.log 2>&1
 
 pacman -Rn --noconfirm base-devel sudo >> /tmp/pacman.log 2>&1
 
