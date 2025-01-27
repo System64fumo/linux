@@ -13,6 +13,8 @@ locale-gen &> /dev/null &
 
 echo "Setting timezone"
 doas ln -s /usr/share/zoneinfo/$TIMEZONE /etc/localtime
+doas pkill time
+doas /etc/rc.d/service start time & disown
 
 echo "Creating user"
 doas useradd -m\
@@ -23,12 +25,7 @@ doas useradd -m\
 
 doas su "$USERNAME" -c "xdg-user-dirs-update" &
 
-doas chfn -f "$FULLUSER" "$USERNAME" &
-
-echo "Moving files"
-doas su -c "mv /opt/setup/.config/* /home/$USERNAME/.config/"
-doas su -c "mv /home/setup/.config/* /home/$USERNAME/.config/"
-doas chown "$USERNAME":"$USERNAME" -R /home/"$USERNAME"
+doas chfn -f "$FULLUSER" "$USERNAME" &> /dev/null &
 
 echo "Setting up autologin"
 doas sed -i "s/setup/$USERNAME/g" /etc/inittab
