@@ -1,4 +1,5 @@
 if [[ $(tty) = /dev/tty1 ]]; then
+	clear
 	doas btrfs filesystem resize max / &> /dev/null & disown
 	dbus-run-session -- cage -dsm last -- sh -c "
 	gsettings set org.gnome.desktop.interface gtk-theme Colloid-Grey-Dark

@@ -1,10 +1,6 @@
-@import url('events.css');
-
 #sysbar {
 	background: @theme_bg_color;
 	border-top: 1px solid @borders;
-	/*box-shadow: 0px 0px 10px black;
-	margin-bottom: 10px;*/
 }
 
 #sysbar .centerbox_main {
@@ -16,7 +12,7 @@
 
 #sysbar_overlay .grid_widgets_start,
 #sysbar_overlay .grid_widgets_end {
-	background: alpha(@theme_base_color, 0.9);
+	background: alpha(@theme_base_color, 1.0);
 	margin: 10px;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 	border: 1px solid @borders;

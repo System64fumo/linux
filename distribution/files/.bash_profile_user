@@ -11,6 +11,7 @@ DESKTOP=y
 
 # Session Launcher
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] && [[ "$DESKTOP" == "y" ]]; then
+	clear
 	dbus-run-session -- labwc
 fi
 

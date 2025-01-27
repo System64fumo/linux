@@ -14,7 +14,7 @@
 
 #sysmenu .box_layout {
 	transition: margin 0.25s ease-in-out;
-	background: alpha(@theme_base_color, 0.75);
+	background: alpha(@theme_base_color, 1.0);
 	border: 1px solid rgba(128, 128, 128, 0.1);
 	margin-top: 870px;
 	margin-bottom: -870px;
