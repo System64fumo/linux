@@ -30,6 +30,7 @@ doas chfn -f "$FULLUSER" "$USERNAME" &> /dev/null &
 echo "Setting up autologin"
 doas sed -i "s/setup/$USERNAME/g" /etc/inittab
 doas mv /opt/setup/.bash_profile_user /home/"$USERNAME"/.bash_profile
+doas chown "$USERNAME":"$USERNAME" -R /home/"$USERNAME"
 doas pkill -1 init
 
 wait
