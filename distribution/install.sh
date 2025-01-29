@@ -1,7 +1,7 @@
 #!/bin/sh
 
-ROOTFSURL=""
-ROOTFSFILE=./rootfs.img
+ROOTSOURCE="./root.tar.xz"
+ROOTOUTPUT=./rootfs.img
 MOUNTPATH=./mount
 
 # Request root access
@@ -10,19 +10,22 @@ if [[ "$(whoami)" != "root" ]]; then
 	exit
 fi
 
-# Get rootfs
-REMOTE_FILE=$(curl -s https://armtixlinux.org/images/sha256sums | grep armtix-dinit | cut -d ' ' -f 3)
-ROOTFSURL="https://armtixlinux.org/images/$REMOTE_FILE"
-
 mkdir $MOUNTPATH
 
 # Create rootfs if missing
-[ -f "$ROOTFSFILE" ] || (truncate -s 4G "$ROOTFSFILE"; mkfs.btrfs "$ROOTFSFILE" -qL rootfs)
+[ -f "$ROOTOUTPUT" ] || (truncate -s 4G "$ROOTOUTPUT"; mkfs.btrfs "$ROOTOUTPUT" -qL rootfs)
 
-mount "$ROOTFSFILE" "$MOUNTPATH" -o rw,noatime,compress=zstd
+mount "$ROOTOUTPUT" "$MOUNTPATH" -o rw,noatime,compress=zstd
 
-echo "Downloading rootfs file..."
-curl -#L "$ROOTFSURL" --keepalive-time 120 | tar -xpJC $MOUNTPATH/
+if [ ! -f "$ROOTSOURCE" ]; then
+	echo "Downloading rootfs file..."
+	REMOTE_FILE=$(curl -s https://armtixlinux.org/images/sha256sums | grep armtix-dinit | cut -d ' ' -f 3)
+	ROOTFSURL="https://armtixlinux.org/images/$REMOTE_FILE"
+	curl -#L "$ROOTFSURL" --keepalive-time 120 -o "$ROOTSOURCE"
+fi
+
+echo "Writing rootfs..."
+cat "$ROOTSOURCE" | tar -xpJC $MOUNTPATH/
 
 echo "Copying files..."
 chmod +x ./files/chroot-install.sh
@@ -38,5 +41,6 @@ chroot $MOUNTPATH /opt/setup/chroot-install.sh
 # Unmount
 umount -fR $MOUNTPATH
 sync
+rmdir $MOUNTPATH
 
 echo "Done!"

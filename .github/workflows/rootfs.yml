@@ -9,6 +9,14 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+      - name: Restore cache
+        id: cache-download
+        uses: actions/cache@v4
+        with:
+          path: distribution/root.tar.xz
+          key: downloaded-file-${{ runner.os }}-v1
+          restore-keys: |
+            downloaded-file-${{ runner.os }}-
       - name: Make script executable
         run: chmod +x ./distribution/install.sh
       - name: Run commands

@@ -5,7 +5,7 @@ if [[ $(tty) = /dev/tty1 ]]; then
 	gsettings set org.gnome.desktop.interface gtk-theme Colloid-Grey-Dark
 	gsettings set org.gnome.desktop.interface icon-theme Colloid-Grey-Dark
 	gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-	/opt/setup/sysinstall" &> /dev/null
+	/opt/setup/sysinstall -o" &> /dev/null
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
