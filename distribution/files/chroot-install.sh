@@ -44,8 +44,9 @@ sed -i '/^#\(Include\)/s/^#//' /etc/pacman.conf
 echo "Installing and updating packages.."
 pacman -Syu --noconfirm --disable-download-timeout base-devel opendoas busybox pipewire{,-pulse,-alsa,-jack} \
 wireplumber labwc swaybg foot nemo ttf-{liberation,dejavu,font-awesome} otf-ipafont \
-polkit-gnome gnome-keyring git xdg-user-dirs firefox geany htop networkmanager blueman \
-pavucontrol mpv cage rtkit sassc dropbear alsa-utils imv >> /tmp/pacman.log 2>&1
+polkit-gnome gnome-keyring git xdg-user-dirs geany htop networkmanager blueman \
+pavucontrol mpv cage rtkit sassc dropbear alsa-utils imv wl-clipboard grim slurp \
+ark qt6ct >> /tmp/pacman.log 2>&1
 
 pacman -Rn --noconfirm base-devel sudo >> /tmp/pacman.log 2>&1
 
@@ -84,7 +85,7 @@ su setup -c "yay --save --editor nano --noanswerclean --noanswerdiff --noansweru
 
 # Install AUR packages
 echo "Installing graphical environment"
-su setup -c "echo y | yay -S --noconfirm --disable-download-timeout sys{menu,hud,bar,board,power,lock,shell} frogfm mathfairy-git" &> /dev/null
+su setup -c "echo y | yay -S --noconfirm --disable-download-timeout sys{menu,hud,bar,board,power,lock,shell} frogfm mathfairy-git librewolf-bin" &> /dev/null
 
 # Replace init system
 echo "Replacing init system with sysvinit"
