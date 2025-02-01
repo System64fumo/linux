@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Startup script used to initialize the system.
+#
+
+cd /etc/rc.d/
+
+#
+# Start up the system
+#
+
+./service start pseudofs
+mastersplash /etc/rc.d/splash/static.ppm 500 30 8 100 100 100 &
+sleep 0.1
+./service start misc
+./service start login
+(./service start modules	; pkill -10 mastersplash)	&
+(./service start mounts		; pkill -10 mastersplash)	&
+(./service start udev		; pkill -10 mastersplash)	&
+(./service start net-setup	; pkill -10 mastersplash)	&
+(NetworkManager				; pkill -10 mastersplash)	&
+./service start time 									&
+./service start zram		; pkill -10 mastersplash)	&
+./service start sshd		; pkill -10 mastersplash)	&
+./service start binfmt		; pkill -10 mastersplash)	&

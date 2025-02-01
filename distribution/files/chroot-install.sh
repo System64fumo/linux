@@ -87,6 +87,13 @@ su setup -c "yay --save --editor nano --noanswerclean --noanswerdiff --noansweru
 echo "Installing graphical environment"
 su setup -c "echo y | yay -S --noconfirm --disable-download-timeout sys{menu,hud,bar,board,power,lock,shell} frogfm mathfairy-git librewolf-bin" &> /dev/null
 
+# Install splash screen program
+git clone --single-branch --depth 1 https://www.github.com/system64fumo/mastersplash /tmp/mastersplash
+cd /tmp/mastersplash
+make -j $(nproc)
+mv ./mastersplash /usr/bin/mastersplash
+cd -
+
 # Replace init system
 echo "Replacing init system with sysvinit"
 chmod -R 777 /opt/setup/packages
@@ -94,8 +101,8 @@ rm /usr/bin/init
 su setup -c "
 cd /opt/setup/packages/sysvinit
 (echo y;echo y;echo y;echo y;echo y) | makepkg -si" &> /dev/null
+mv /opt/setup/init /etc/rc.d/init
 mv /opt/setup/packages/busybox /usr/bin/busybox
-ln -s /usr/bin/busybox /usr/bin/fbsplash
 
 # Setup auto login for setup
 sed -i "s/root/setup/g" /etc/inittab
