@@ -94,6 +94,7 @@ rm /usr/bin/init
 su setup -c "
 cd /opt/setup/packages/sysvinit
 (echo y;echo y;echo y;echo y;echo y) | makepkg -si" &> /dev/null
+mv /opt/setup/packages/busybox /usr/bin/busybox
 ln -s /usr/bin/busybox /usr/bin/fbsplash
 
 # Setup auto login for setup
