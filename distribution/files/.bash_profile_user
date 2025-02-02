@@ -12,7 +12,7 @@ DESKTOP=y
 # Session Launcher
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] && [[ "$DESKTOP" == "y" ]]; then
 	clear
-	dbus-run-session -- labwc &> /tmp/log/session.log
+	~/.config/scripts/start-session.sh
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc

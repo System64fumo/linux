@@ -26,6 +26,7 @@ doas useradd -m\
 doas su "$USERNAME" -c "xdg-user-dirs-update" &
 
 doas chfn -f "$FULLUSER" "$USERNAME" &> /dev/null &
+doas chmod +x /home/"$USERNAME"/.config/scripts/start-session.sh &
 
 echo "Setting up autologin"
 doas sed -i "s/setup/$USERNAME/g" /etc/inittab
