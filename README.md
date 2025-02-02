@@ -18,6 +18,7 @@ Expect to see:<br>
 
 Start reading:<br>
 [bootloaders](documentation/bootloaders.md)<br>
+[custom linux](documentation/custom_linux.md)<br>
 [initramfs](documentation/initramfs.md)<br>
 [linux](documentation/linux.md)<br>
 [misc](documentation/misc.md)<br>
