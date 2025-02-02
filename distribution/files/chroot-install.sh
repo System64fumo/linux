@@ -103,6 +103,7 @@ cd /opt/setup/packages/sysvinit
 (echo y;echo y;echo y;echo y;echo y) | makepkg -si" &> /dev/null
 mv /opt/setup/init /etc/rc.d/init
 mv /opt/setup/packages/busybox /usr/bin/busybox
+chmod +x /etc/rc.d/init
 
 # Setup auto login for setup
 sed -i "s/root/setup/g" /etc/inittab
