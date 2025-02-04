@@ -21,7 +21,7 @@ Do note that only stuff that i have tested and verified to be working is here.<b
 
 # Device specific repos
 [sdm845/sdm850](https://github.com/silime/ArchLinux-Packages)<br>
-[Apple Silicon](https://github.com/1usOS/PKGBUILDs/tree/asahi)<br>
+[Apple Silicon](https://github.com/asahi-alarm/PKGBUILDs)<br>
 
 # Awesome projects
 [Armbian](https://www.armbian.com)<br>
