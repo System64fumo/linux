@@ -85,7 +85,7 @@ su setup -c "yay --save --editor nano --noanswerclean --noanswerdiff --noansweru
 
 # Install AUR packages
 echo "Installing graphical environment"
-su setup -c "echo y | yay -S --noconfirm --disable-download-timeout sys{menu,hud,bar,board,power,lock,shell} frogfm mathfairy-git librewolf-bin" &> /dev/null
+su setup -c "echo y | yay -S --noconfirm --disable-download-timeout sys{menu,hud,bar,board,power,lock,shell} frogfm mathfairy-git brave-bin" &> /dev/null
 
 # Install splash screen program
 git clone --single-branch --depth 1 https://www.github.com/system64fumo/mastersplash /tmp/mastersplash

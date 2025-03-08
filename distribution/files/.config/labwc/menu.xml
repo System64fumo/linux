@@ -44,7 +44,7 @@
 
 <menu id="root-menu">
   <item label="Web browser">
-    <action name="Execute" command="librewolf" />
+    <action name="Execute" command="brave" />
   </item>
   <item label="File browser">
     <action name="Execute" command="nemo" />

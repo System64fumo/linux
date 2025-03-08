@@ -53,7 +53,9 @@ elif [ "$1" == "generate" ]; then
 	mkdir /tmp/kernel/{boot,usr,lib}
 	ln -s /tmp/kernel/lib /tmp/kernel/usr/lib
 	export INSTALL_MOD_PATH=/tmp/kernel
+	export INSTALL_DTBS_PATH=/tmp/kernel/boot
 	make O=../build/$DEVICE modules_install -j $CORES
+	make O=../build/$DEVICE dtbs_install -j $CORES
 	cp ../build/$DEVICE/arch/$ARCH/boot/Image /tmp/kernel/boot/
 	cp ../build/$DEVICE/arch/$ARCH/boot/Image.gz /tmp/kernel/boot/
 elif [ "$1" == "install" ]; then
