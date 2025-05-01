@@ -13,25 +13,25 @@ Network: 2x 5Gig Ethernet  + M.2 E key (4.0 2x lanes)<br/>
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
 # Mainline support
-| linux-next    | Status      | Notes                                                              |
-| ------------- | ------------|--------------------------------------------------------------------|
-| Mainline      | 🟢 Works    | ACPI boot only ATM                                                 |
-| SoC           | 🟡 Partial  | Some cores run at reduced speeds                                   |
-| RAM           | 🟢 Works    | All memory is detected (up to 64gb)                                |
-| GPU           | 🔴 Broken   | Pending panthor driver merge request                               |
-| NPU           | 🔴 Broken   | No driver                                                          |
-| HDMI          | 🟡 Partial  | EFI FB partially works                                             |
-| DP            | 🟡 Partial  | Same as above                                                      |
-| eDP           | ⚫ Untested |                                                                    |
-| Storage       | 🟢 Works    | M.2 SSDs work as expected                                          |
-| Network       | 🟢 Works    | Both 5 gig ports work normally                                     |
-| Front USB     | ⚫ Untested |                                                                    |
-| Rear USB      | 🟢 Works    | Not sure if it's on my end but some ports occasionally disconnect? |
-| Front audio   | ⚫ Untested |                                                                    |
-| Rear audio    | 🔴 Broken   |                                                                    |
-| RTC           | 🟡 Partial  | Date seems to get loaded just fine but time doesn't?               |
-| UART          | 🟢 Works    |                                                                    |
-| PCIE          | 🟡 Partial  | Works fine for most devices but some GPUs don't get detected       |
+| linux-next  | Status     | Notes                                                                                                                                 |
+|-------------|------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| Mainline    | 🟢 Works    | ACPI boot only ATM                                                                                                                    |
+| SoC         | 🟡 Partial  | Some cores run at [reduced](https://forum.radxa.com/t/clarification-about-the-o6-spec-change/26493) speeds (2.6GHz instead of 2.8GHz) |
+| RAM         | 🟢 Works    | All memory is detected (up to 64gb)                                                                                                   |
+| GPU         | 🔴 Broken   | Pending panthor driver [merge request](https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/34032)                               |
+| NPU         | 🔴 Broken   | No driver                                                                                                                             |
+| HDMI        | 🟡 Partial  | EFI FB partially works (1080P@60Hz on most monitors)                                                                                  |
+| DP          | 🟡 Partial  | Same as above                                                                                                                         |
+| eDP         | ⚫ Untested | -                                                                                                                                     |
+| Storage     | 🟢 Works    | M.2 SSDs work as expected                                                                                                             |
+| Network     | 🟢 Works    | Both 5 gig ports (rtl8126) work normally on Linux >6.9                                                                                |
+| Front USB   | ⚫ Untested | -                                                                                                                                     |
+| Rear USB    | 🟢 Works    | Not sure if it's on my end but some ports occasionally disconnect?                                                                    |
+| Front audio | ⚫ Untested | -                                                                                                                                     |
+| Rear audio  | 🔴 Broken   | -                                                                                                                                     |
+| RTC         | 🟡 Partial  | Date seems to get loaded just fine but time doesn't?                                                                                  |
+| UART        | 🟢 Works    | UART2 for Boot / Linux console                                                                                                        |
+| PCIE        | 🟡 Partial  | Works fine for most devices but some GPUs don't get detected (see below)                                                              |
 
 # Notes
 This board is capable of booting pure mainline linux, It's also capable of utilizing some external Graphics cards.<br/>
