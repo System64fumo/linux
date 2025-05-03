@@ -22,7 +22,7 @@ Network: 2x 5Gig Ethernet  + M.2 E key (4.0 2x lanes)<br/>
 | NPU         | 🔴 Broken   | No driver                                                                                                                             |
 | HDMI        | 🟡 Partial  | EFI FB partially works (1080P@60Hz on most monitors)                                                                                  |
 | DP          | 🟡 Partial  | Same as above                                                                                                                         |
-| eDP         | ⚫ Untested | -                                                                                                                                     |
+| eDP         | 🟢 Works    | Confirmed working on a NE140QDM-NX1 panel                                                                                             |
 | Storage     | 🟢 Works    | M.2 SSDs work as expected                                                                                                             |
 | Network     | 🟢 Works    | Both 5 gig ports (rtl8126) work normally on Linux >6.9                                                                                |
 | Front USB   | ⚫ Untested | -                                                                                                                                     |
