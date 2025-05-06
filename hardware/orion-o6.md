@@ -37,14 +37,19 @@ Network: 2x 5Gig Ethernet  + M.2 E key (4.0 2x lanes)<br/>
 This board is capable of booting pure mainline linux, It's also capable of utilizing some external Graphics cards.<br/>
 Anything with a link is tested by someone other than me, Credits go to them.<br/>
 
-| Device   | Status      | Notes                                                |
-| ---------| ------------|------------------------------------------------------|
-| RX 580   | 🟢 Works    |                                                      |
-| RX 7600  | 🟡 Partial? | [Works](https://forum.radxa.com/t/arm-workstation-build/25922) [Does not](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615) |
-| RX 7800  | 🔴 Broken   | UEFI does not detect the card neither does linux     |
-| WX 3100  | 🟢 Works    | [Source](https://x.com/intlinux/status/1884081756556628325) |
-| GT 1030  | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1916096610188067038) |
-| GTX 1650 | 🟡 Partial  | Works in linux, Does not work in UEFI (Black screen) |
-| RTX 3060 | 🟢 Works    | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2799534109) |
-| RTX 3090 | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1910018752176857284) |
-| RTX A400 | 🔴 Broken   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)
+| Device      | Status      | Notes                                                |
+| ------------| ------------|------------------------------------------------------|
+| RX 480      | 🟢 Works    | [Source](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615) |
+| RX 580      | 🟢 Works    |                                                      |
+| RX 7600     | 🟡 Partial? | [Works](https://forum.radxa.com/t/arm-workstation-build/25922) [Does not](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615) |
+| RX 6500     | 🟡 Partial  | [Works but needs 6.15 kernel + 64k pages](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/478) |
+| RX 6700     | 🟡 Partial  | [Detected in linux but causes hang once driver loads](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852465195) |
+| RX 7800     | 🔴 Broken   | UEFI does not detect the card neither does linux     |
+| RX 7900     | 🟡 Partial  | [Detected in linux but causes hang once driver loads](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852451205) |
+| WX 3100     | 🟢 Works    | [Source](https://x.com/intlinux/status/1884081756556628325) |
+| GT 1030     | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1916096610188067038) |
+| GTX 1650    | 🟡 Partial  | Works in linux, Does not work in UEFI (Black screen) |
+| RTX 3060    | 🟢 Works    | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2799534109) |
+| RTX 3080 TI | 🟡 Partial  | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852490521) |
+| RTX 3090    | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1910018752176857284) |
+| RTX A400    | 🔴 Broken   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)
