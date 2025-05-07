@@ -25,7 +25,7 @@ Network: 2x 5Gig Ethernet  + M.2 E key (4.0 2x lanes)<br/>
 | eDP          | 🟢 Works    | Confirmed working on a NE140QDM-NX1 panel                                                                                             |
 | Storage      | 🟢 Works    | M.2 SSDs work as expected                                                                                                             |
 | Network      | 🟢 Works    | Both 5 gig ports (rtl8126) work normally on Linux >6.9                                                                                |
-| Front USB    | ⚫ Untested | -                                                                                                                                     |
+| Front USB    | 🟢 Works    | Needs 9.0.0 firmware; the specific ports are disabled on 0.2.2                                                                        |
 | Rear USB     | 🟢 Works    | Not sure if it's on my end but some ports occasionally disconnect?                                                                    |
 | Front audio  | ⚫ Untested | -                                                                                                                                     |
 | Rear audio   | 🔴 Broken   | -                                                                                                                                     |
