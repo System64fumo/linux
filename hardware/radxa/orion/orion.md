@@ -55,6 +55,7 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RX 580      | 🟢 Works    |                                                                                                                                                   |
 | RX 5600     | 🟢 Works    |                                                                                                                                                   |
 | RX 6500     | 🟢 Works    | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/494)                                                |
+| RX 6600     | 🟢 Works    | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/496)
 | RX 6700     | 🟢 Works    | Needs [9.0.0 firmware](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/485) + Kernel patch                                        |
 | RX 7600     | 🟡 Partial? | [Works](https://forum.radxa.com/t/arm-workstation-build/25922) [Does not](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615) |
 | RX 7800     | 🔴 Broken   | UEFI does not detect the card neither does linux                                                                                                  |
