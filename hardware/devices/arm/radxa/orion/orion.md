@@ -55,15 +55,16 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RX 580      | 🟢 Works    |                                                                                                                                                   |
 | RX 5600     | 🟢 Works    |                                                                                                                                                   |
 | RX 6500     | 🟢 Works    | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/494)                                                |
-| RX 6600     | 🟢 Works    | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/496)
+| RX 6600     | 🟢 Works    | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/496)                                                |
 | RX 6700     | 🟢 Works    | Needs [9.0.0 firmware](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/485) + Kernel patch                                        |
 | RX 7600     | 🟡 Partial? | [Works](https://forum.radxa.com/t/arm-workstation-build/25922) [Does not](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615) |
 | RX 7800     | 🔴 Broken   | UEFI does not detect the card neither does linux                                                                                                  |
 | RX 7900     | 🟡 Partial  | [Detected in linux but causes hang once driver loads](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852451205)               |
 | WX 3100     | 🟢 Works    | [Source](https://x.com/intlinux/status/1884081756556628325)                                                                                       |
+| Nvidia      | 🟢 Works    | Works in linux & UEFI when X86EmulatorDxe is available in EDK2 (tested by @HeyMeco)                                                               |
 | GT 210      | 🟢 Works    |                                                                                                                                                   |
 | GT 1030     | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1916096610188067038)                                                                                    |
-| GTX 1650    | 🟢 Works    | Works in linux, Does not work in UEFI (Black screen)                                                                                              |
+| GTX 1650    | 🟢 Works    |                                                                                                                                                   |
 | RTX 3060    | 🟢 Works    | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2799534109)                                                            |
 | RTX 3070 TI | 🟢 Works    | [Source](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/8)                                                                       |
 | RTX 3080 TI | 🟡 Partial  | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852490521)                                                            |
