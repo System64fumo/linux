@@ -13,25 +13,27 @@ Network: 1Gig Ethernet | WiFi 5 | Bluetooth 5<br/>
 <br/>
 
 # Mainline support
-| linux-next   | Status      | Notes                              |
-|--------------|-------------|------------------------------------|
-| Mainline     | 🟢 Works    |                                    |
-| CPU          | 🟢 Works    |                                    |
-| RAM          | 🟢 Works    |                                    |
-| GPU          | 🟢 Works    |                                    |
-| NPU          | 🔴 Broken   | No driver                          |
-| HW Encode    | ⚫ Untested | Should work but i've not tested it |
-| HW Decode    | ⚫ Untested | Same as above                      |
-| HDMI         | 🟢 Works    |                                    |
-| Storage      | 🟢 Works    |                                    |
-| Network      | 🟢 Works    |                                    |
-| Rear USB     | 🟢 Works    |                                    |
-| Audio Jack   | 🟢 Works    |                                    |
-| RTC          | 🟢 Works    |                                    |
-| UART         | 🟢 Works    |                                    |
-| M.2 E Key    | ⚫ Untested |                                    |
-| Thermals     | 🟢 Works    |                                    |
-| Fan control  | 🔴 Broken   |                                    |
-| Power Button | 🟢 Works    |                                    |
-| GPIO         | ⚫ Untested |                                    |
-| LEDs         | 🟢 Works    |                                    |
+| linux-next   | Status      | Notes                                   |
+|--------------|-------------|-----------------------------------------|
+| Mainline     | 🟢 Works    |                                         |
+| CPU          | 🟢 Works    |                                         |
+| RAM          | 🟢 Works    |                                         |
+| GPU          | 🟢 Works    |                                         |
+| NPU          | 🔴 Broken   | No driver                               |
+| HW Encode    | ⚫ Untested | Should work but i've not tested it      |
+| HW Decode    | ⚫ Untested | Same as above                           |
+| HDMI         | 🟢 Works    |                                         |
+| Micro SD     | 🟢 Works    |                                         |
+| Ethernet     | 🟢 Works    |                                         |
+| WiFi         | 🟢 Works    | Reports missing firmware but works fine |
+| Bluetooth    | ⚫ Untested | Likely working                          |
+| Rear USB     | 🟢 Works    |                                         |
+| Audio Jack   | 🟢 Works    |                                         |
+| RTC          | 🟢 Works    |                                         |
+| UART         | 🟢 Works    |                                         |
+| M.2 E Key    | ⚫ Untested |                                         |
+| Thermals     | 🟢 Works    |                                         |
+| Fan control  | 🔴 Broken   |                                         |
+| Power Button | 🟢 Works    |                                         |
+| GPIO         | ⚫ Untested |                                         |
+| LEDs         | 🟢 Works    |                                         |

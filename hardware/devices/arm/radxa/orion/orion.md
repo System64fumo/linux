@@ -3,7 +3,7 @@
 
 Manufacturer: Radxa<br/>
 SoC: CIX CD8180<br/>
-CPU: 4x A720 @ 2.6GHz + 4x A720 @ 2.4GHz + 4x A520 @ 1.8GHz<br/>
+CPU: 4x A72 @ 2.6GHz + 4x A72 @ 2.4GHz + 4x A52 @ 1.8GHz<br/>
 RAM: 8 | 16 | 32 | 64 GB<br/>
 GPU: Immortals G720 MC10<br/>
 NPU: 30 TOPs<br/>
@@ -27,7 +27,7 @@ Network: 2x 5Gig Ethernet  + M.2 E key (4.0 2x lanes)<br/>
 | eDP          | 🟡 Partial  | Same as above, Confirmed working on a NE140QDM-NX1 panel                                                                              |
 | USB-C DP     | 🟡 Partial  | Same as above                                                                                                                         |
 | Storage      | 🟢 Works    | M.2 SSDs work as expected                                                                                                             |
-| Network      | 🟢 Works    | Random chance of the drivers [crashing](https://forum.radxa.com/t/miscellaneous-testing/26642/13) on boot                             |
+| Ethernet     | 🟢 Works    | Random chance of the drivers [crashing](https://forum.radxa.com/t/miscellaneous-testing/26642/13) on boot                             |
 | Front USB    | 🟢 Works    | Needs [9.0.0 firmware](https://dl.radxa.com/orion/o6/images/bios/SystemReady/latest)                                                  |
 | Rear USB     | 🟢 Works    | Not sure if it's on my end but some ports occasionally disconnect?                                                                    |
 | Front audio  | ⚫ Untested | -                                                                                                                                     |

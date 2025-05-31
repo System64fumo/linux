@@ -10,7 +10,7 @@ NPU: 6.0 TOPs<br/>
 Storage: M.2 M key | EMMC | MicroSD<br/>
 Network: 2x 2.5Gig Ethernet<br/>
 
-<br/>
+<br/><br/><br/>
 
 # Mainline support
 | linux-next   | Status      | Notes                                             |
