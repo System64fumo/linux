@@ -72,4 +72,4 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RTX 3090    | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1910018752176857284)                                                                                    |
 | RTX A400    | 🔴 Broken   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)                                                            |
 | **Intel**   | 🟡 Partial  | Works but sometimes requires hard reset. Driver also needs patch                                                                                  |
-| B580        | 🟡 Partial  | Works in linux [Source](https://discord.com/channels/855634073376260096/1319155498263773214/1393137843760533536)                                  |
+| B580        | 🟡 Partial  | Works in linux [Source](https://github.com/System64fumo/linux/pull/7#issuecomment-3068051539)                                  |
