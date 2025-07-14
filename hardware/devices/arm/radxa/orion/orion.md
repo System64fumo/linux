@@ -51,6 +51,7 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 
 | Device      | Status      | Notes                                                                                                                                             |
 | ------------| ------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| **AMD**     | 🟢 Works    |                                                                                                                                                   |
 | RX 480      | 🟢 Works    | [Source](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615)                                                                  |
 | RX 580      | 🟢 Works    |                                                                                                                                                   |
 | RX 5600     | 🟢 Works    |                                                                                                                                                   |
@@ -61,7 +62,7 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RX 7800     | 🔴 Broken   | UEFI does not detect the card neither does linux                                                                                                  |
 | RX 7900     | 🟡 Partial  | [Detected in linux but causes hang once driver loads](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852451205)               |
 | WX 3100     | 🟢 Works    | [Source](https://x.com/intlinux/status/1884081756556628325)                                                                                       |
-| Nvidia      | 🟢 Works    | Works in linux & UEFI when X86EmulatorDxe is available in EDK2 (tested by @HeyMeco)                                                               |
+| **Nvidia**  | 🟢 Works    | Works in linux & UEFI when X86EmulatorDxe is available in EDK2 (tested by @HeyMeco)                                                               |
 | GT 210      | 🟢 Works    |                                                                                                                                                   |
 | GT 1030     | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1916096610188067038)                                                                                    |
 | GTX 1650    | 🟢 Works    |                                                                                                                                                   |
@@ -70,3 +71,5 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RTX 3080 TI | 🟡 Partial  | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852490521)                                                            |
 | RTX 3090    | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1910018752176857284)                                                                                    |
 | RTX A400    | 🔴 Broken   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)                                                            |
+| **Intel**   | 🟡 Partial  | Works but sometimes requires hard reset. Driver also needs patch                                                                                  |
+| B580        | 🟡 Partial  | Works in linux [Source](https://github.com/System64fumo/linux/pull/7#issuecomment-3068051539)                                  |
