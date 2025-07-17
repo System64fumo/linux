@@ -12,6 +12,26 @@ Network: 1Gig Ethernet | WiFi 5 | Bluetooth 5<br/>
 
 <br/>
 
+<details>
+  <summary>Power consumption</summary>
+
+  Bare board: `1.10w`<br>
+  Maxed out: `5.13w`<br><br>
+
+  ### Bare board
+  Board powered on in a headless environment and the CPU set to powersave governor.<br>
+  No desktop, No HDMI, No external peripherals, Passive cooling, MicroSD boot device, No Wireless/Wired communication.<br>
+
+  ### Maxed out
+  GUI desktop and CPU set to performance governor.<br>
+  glmark2-wayland, stress --vm 4 --vm-bytes 128M -c 4, iperf3 --bidir, And active cooling.<br>
+
+  ### Notes
+  Unfortunately i don't have another M.2 SSD to test this with so storage/Disk IO is omitted from this test.<br>
+  WiFi doesn't seem to work in mainline, Unless i'm doing something wrong, Radio (WiFi/Bluetooth) are omitted.<br>
+  NPU Driver is not in mainline currently so that's also omitted.<br>
+</details>
+
 # Mainline support
 | linux-next   | Status      | Notes                                   |
 |--------------|-------------|-----------------------------------------|
@@ -25,8 +45,8 @@ Network: 1Gig Ethernet | WiFi 5 | Bluetooth 5<br/>
 | HDMI         | 🟢 Works    |                                         |
 | Micro SD     | 🟢 Works    |                                         |
 | Ethernet     | 🟢 Works    |                                         |
-| WiFi         | 🟢 Works    | Reports missing firmware but works fine |
-| Bluetooth    | ⚫ Untested | Likely working                          |
+| WiFi         | 🔴 Broken   | Reports missing firmware                |
+| Bluetooth    | 🟢 Works    |                                         |
 | Rear USB     | 🟢 Works    |                                         |
 | Audio Jack   | 🟢 Works    |                                         |
 | RTC          | 🟢 Works    |                                         |
