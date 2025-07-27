@@ -23,4 +23,5 @@ Start reading:<br>
 [initramfs](documentation/initramfs.md)<br>
 [linux](documentation/linux.md)<br>
 [misc](documentation/misc.md)<br>
+[optimization](documentation/optimization.md)<br>
 [rootfs](documentation/rootfs.md)<br>
