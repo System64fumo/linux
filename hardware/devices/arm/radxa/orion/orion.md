@@ -73,3 +73,13 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RTX A400    | 🔴 Broken   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)                                                            |
 | **Intel**   | 🟡 Partial  | Works but sometimes requires hard reset. Driver also needs patch                                                                                  |
 | B580        | 🟡 Partial  | Works in linux [Source](https://github.com/System64fumo/linux/pull/7#issuecomment-3068051539)                                  |
+
+# Storage controllers
+There are multiple options to extend the storage beyond the M.2 E key. One of the options is to use a SAS based raid controller with support for HBA mode.  
+
+## Raid controllers
+
+| Device      | Status      | Notes
+| ------------| ------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Fujitsu**  
+| D3307-A12 | 🟢 Works      |  [Source](https://github.com/System64fumo/linux/issues/10)
