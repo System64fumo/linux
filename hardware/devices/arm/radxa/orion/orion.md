@@ -53,7 +53,7 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | ------------| ------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | **AMD**     | 🟢 Works    |                                                                                                                                                   |
 | RX 480      | 🟢 Works    | [Source](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615)                                                                  |
-| RX 580      | 🟢 Works    |                                                                                                                                                   |
+| RX 580      | 🟢 Works    | [Source](https://github.com/System64fumo/linux/issues/12)                                                                                        |
 | RX 5600     | 🟢 Works    |                                                                                                                                                   |
 | RX 6400     | 🟢 Works    | [Source](https://forum.radxa.com/t/orion-o6s-pcie-x16-slot-wattage-12v-q/27262/8)                                                                 |
 | RX 6500     | 🟢 Works    | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/494)                                                |
