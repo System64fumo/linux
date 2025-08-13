@@ -49,31 +49,31 @@ This board can utilize *some* dedicated PCIE GPUs.<br/>
 Please note that there are currently issues with pcie 4.0 devices and there are some issues with modern AMD GPUs.<br/>
 Anything with a link is tested by someone other than me, Credits go to them.<br/>
 
-| Device      | Status      | Notes                                                                                                                                             |
-| ------------| ------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| **AMD**     | 🟢 Works    |                                                                                                                                                   |
-| RX 480      | 🟢 Works    | [Source](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615)                                                                  |
-| RX 580      | 🟢 Works    |                                                                                                                                                   |
-| RX 5600     | 🟢 Works    |                                                                                                                                                   |
-| RX 6400     | 🟢 Works    | [Source](https://forum.radxa.com/t/orion-o6s-pcie-x16-slot-wattage-12v-q/27262/8)                                                                 |
-| RX 6500     | 🟢 Works    | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/494)                                                |
-| RX 6600     | 🟢 Works    | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/496)                                                |
-| RX 6700     | 🟢 Works    | Needs [9.0.0 firmware](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/485) + Kernel patch                                        |
-| RX 7600     | 🟡 Partial? | [Works](https://forum.radxa.com/t/arm-workstation-build/25922) [Does not](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615) |
-| RX 7800     | 🔴 Broken   | UEFI does not detect the card neither does linux                                                                                                  |
-| RX 7900     | 🟡 Partial  | [Detected in linux but causes hang once driver loads](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852451205)               |
-| WX 3100     | 🟢 Works    | [Source](https://x.com/intlinux/status/1884081756556628325)                                                                                       |
-| **Nvidia**  | 🟢 Works    | Works in linux & UEFI when X86EmulatorDxe is available in EDK2 (tested by @HeyMeco)                                                               |
-| GT 210      | 🟢 Works    |                                                                                                                                                   |
-| GT 1030     | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1916096610188067038)                                                                                    |
-| GTX 1650    | 🟢 Works    |                                                                                                                                                   |
-| RTX 3060    | 🟢 Works    | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2799534109)                                                            |
-| RTX 3070 TI | 🟢 Works    | [Source](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/8)                                                                       |
-| RTX 3080 TI | 🟡 Partial  | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852490521)                                                            |
-| RTX 3090    | 🟢 Works    | [Source](https://x.com/mecoscorner/status/1910018752176857284)                                                                                    |
-| RTX A400    | 🔴 Broken   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)                                                            |
-| **Intel**   | 🟡 Partial  | Works but sometimes requires hard reset. Driver also needs patch                                                                                  |
-| B580        | 🟡 Partial  | Works in linux [Source](https://github.com/System64fumo/linux/pull/7#issuecomment-3068051539)                                  |
+| Device      | Status     | Notes                                                                                                                                             |
+| ------------| -----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| **AMD**     | 🟢 Works   | Modern cards (rx 7600/newer) may need X86EmulatorDxe in order to see things in UEFI                                                               |
+| RX 480      | 🟢 Works   | [Source](https://forum.radxa.com/t/problems-with-pcie-gen4-on-the-x8-slot/26615)                                                                  |
+| RX 580      | 🟢 Works   |                                                                                                                                                   |
+| RX 5600     | 🟢 Works   |                                                                                                                                                   |
+| RX 6400     | 🟢 Works   | [Source](https://forum.radxa.com/t/orion-o6s-pcie-x16-slot-wattage-12v-q/27262/8)                                                                 |
+| RX 6500     | 🟢 Works   | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/494)                                                |
+| RX 6600     | 🟢 Works   | [Works but needs 6.15 kernel](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/496)                                                |
+| RX 6700     | 🟢 Works   | Needs [9.0.0 firmware](https://forum.radxa.com/t/orion-o6-debug-party-invitation/25054/485) + Kernel patch                                        |
+| RX 7600     | 🟢 Works   | [Works Source 1](https://forum.radxa.com/t/arm-workstation-build/25922) [Works Source 2](https://forum.radxa.com/t/issues-with-modern-graphics-cards/26891/7) |
+| RX 7800     | 🔴 Broken  | UEFI does not detect the card neither does linux                                                                                                  |
+| RX 7900     | 🟡 Partial | [Detected in linux but causes hang once driver loads](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852451205)               |
+| WX 3100     | 🟢 Works   | [Source](https://x.com/intlinux/status/1884081756556628325)                                                                                       |
+| **Nvidia**  | 🟢 Works   | Works in linux & UEFI when X86EmulatorDxe is available in EDK2 (tested by @HeyMeco)                                                               |
+| GT 210      | 🟢 Works   |                                                                                                                                                   |
+| GT 1030     | 🟢 Works   | [Source](https://x.com/mecoscorner/status/1916096610188067038)                                                                                    |
+| GTX 1650    | 🟢 Works   |                                                                                                                                                   |
+| RTX 3060    | 🟢 Works   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2799534109)                                                            |
+| RTX 3070 TI | 🟢 Works   | [Source](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/8)                                                                       |
+| RTX 3080 TI | 🟡 Partial | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852490521)                                                            |
+| RTX 3090    | 🟢 Works   | [Source](https://x.com/mecoscorner/status/1910018752176857284)                                                                                    |
+| RTX A400    | 🔴 Broken  | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)                                                            |
+| **Intel**   | 🟡 Partial | Works but sometimes requires hard reset. Driver also needs patch                                                                                  |
+| B580        | 🟡 Partial | Works in linux [Source](https://github.com/System64fumo/linux/pull/7#issuecomment-3068051539)                                                     |
 
 # Storage controllers
 There are multiple options to extend the storage beyond the M.2 E key. One of the options is to use a SAS based raid controller with support for HBA mode.  
