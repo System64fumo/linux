@@ -84,3 +84,9 @@ There are multiple options to extend the storage beyond the M.2 E key. One of th
 | ------------| ------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Fujitsu**  
 | D3307-A12 | 🟢 Works      |  [Source](https://github.com/System64fumo/linux/issues/10)
+
+## Sata controllers
+| Device      | Status      | Notes
+| ------------| ------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| **No Name**               |
+| JMB582 based | 🟢 Works   |  [Source](https://github.com/System64fumo/linux/issues/14)
