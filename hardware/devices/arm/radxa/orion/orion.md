@@ -36,7 +36,7 @@ Network: 2x 5Gig Ethernet  + M.2 E key (4.0 2x lanes)<br/>
 | UART         | 🟢 Works    | UART2 for Boot / Linux console                                                                                                        |
 | PCIE         | 🟡 Partial  | Works fine for most devices but some GPUs don't get detected (see below)                                                              |
 | M.2 E Key    | 🟢 Works    | -                                                                                                                                     |
-| M.2 M Key    | ⚫ Untested | -                                                                                                                                     |
+| M.2 M Key    | 🟢 Works    | Needs [1.0.0-1 firmware](https://github.com/radxa-pkg/edk2-cix/releases/tag/1.0.0-1)                                                  |
 | Thermals     | 🟢 Works    | Needs [0.3.0-1 firmware](https://github.com/radxa-pkg/edk2-cix/releases/tag/0.3.0-1)                                                  |
 | Fan control  | 🟡 Partial  | Auto fan control, No way to control from OS                                                                                           |
 | Power Button | 🔴 Broken   | -                                                                                                                                     |
@@ -84,3 +84,9 @@ There are multiple options to extend the storage beyond the M.2 E key. One of th
 | ------------| ------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Fujitsu**  
 | D3307-A12 | 🟢 Works      |  [Source](https://github.com/System64fumo/linux/issues/10)
+
+## Sata controllers
+| Device      | Status      | Notes
+| ------------| ------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| **No Name**               |
+| JMB582 based | 🟢 Works   |  [Source](https://github.com/System64fumo/linux/issues/14)
