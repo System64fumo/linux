@@ -71,6 +71,7 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RTX 3070 TI | 🟢 Works   | [Source](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/8)                                                                       |
 | RTX 3080 TI | 🟡 Partial | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852490521)                                                            |
 | RTX 3090    | 🟢 Works   | [Source](https://x.com/mecoscorner/status/1910018752176857284)                                                                                    |
+| RTX 5080    | 🟢 Works   | [Works but needs latest firmware](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/11)                                             |
 | RTX A400    | 🔴 Broken  | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)                                                            |
 | **Intel**   | 🟡 Partial | Works but sometimes requires hard reset. Driver also needs patch                                                                                  |
 | B580        | 🟡 Partial | Works in linux [Source](https://github.com/System64fumo/linux/pull/7#issuecomment-3068051539)                                                     |
