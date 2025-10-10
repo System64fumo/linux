@@ -29,8 +29,8 @@ Network: 2x 2.5Gig Ethernet<br/>
 | EMMC         | 🟢 Works    |                                                   |
 | Ethernet     | 🟢 Works    |                                                   |
 | Rear USB     | 🟢 Works    |                                                   |
-| Font USB     | 🔴 Broken   |                                                   |
-| Audio Jack   | 🔴 Broken   | In theory it should work but doesn't?             |
+| Font USB     | 🟢 Works    |                                                   |
+| Audio Jack   | 🟢 Works    |                                                   |
 | Speakers     | 🟢 Works    |                                                   |
 | Microphone   | 🔴 Broken   |                                                   |
 | RTC          | 🟢 Works    |                                                   |
