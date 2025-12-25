@@ -69,10 +69,12 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | GT 210      | 🟢 Works   |                                                                                                                                                   |
 | GT 1030     | 🟢 Works   | [Source](https://x.com/mecoscorner/status/1916096610188067038)                                                                                    |
 | GTX 1650    | 🟢 Works   |                                                                                                                                                   |
+| GTX 1660 TI | 🟢 Works   | Tested by [kossLAN](https://github.com/kossLAN)                                                                                                   |
 | RTX 3060    | 🟢 Works   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2799534109)                                                            |
 | RTX 3070 TI | 🟢 Works   | [Source](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/8)                                                                       |
 | RTX 3080 TI | 🟡 Partial | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852490521)                                                            |
 | RTX 3090    | 🟢 Works   | [Source](https://x.com/mecoscorner/status/1910018752176857284)                                                                                    |
+| RTX 5050    | 🟢 Works   | [Source](https://github.com/System64fumo/linux/pull/18)                                                                                           |
 | RTX 5080    | 🟢 Works   | [Works but needs latest firmware](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/11)                                             |
 | RTX A400    | 🔴 Broken  | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)                                                            |
 | **Intel**   | 🟡 Partial | Works but sometimes requires hard reset. Driver also needs patch                                                                                  |
