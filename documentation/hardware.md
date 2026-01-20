@@ -6,3 +6,4 @@
 | Orange Pi    | Orange Pi 5 Plus | [RK3588](../hardware/socs/arm/rockchip/rk3588.md) | Rockchip         | [Link](../hardware/devices/arm/orangepi/opi5+/opi5+.md)        |
 | MilkV        | Duo 256M         | SG2002                                            | Sophgo           | [Link](../hardware/devices/riscv/milkv/duo256/duo256.md)       |
 | LibreTech    | Solitude         | S905D3                                            | Amlogic          | [Link](../hardware/devices/arm/libretech/solitude/solitude.md) |
+| Banana Pi    | R4 Pro           | MT7988                                            | Mediatek         | [Link](../hardware/devices/arm/bananapi/r4-pro/r4-pro.md)      |
