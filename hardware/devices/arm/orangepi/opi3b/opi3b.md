@@ -27,9 +27,25 @@ Network: 1Gig Ethernet | WiFi 5 | Bluetooth 5<br/>
   glmark2-wayland, stress --vm 4 --vm-bytes 128M -c 4, iperf3 --bidir, And active cooling.<br>
 
   ### Notes
-  Unfortunately i don't have another M.2 SSD to test this with so storage/Disk IO is omitted from this test.<br>
+  Unfortunately i don't have a spare M.2 SSD to test this with so storage/Disk IO is omitted from this test.<br>
   WiFi doesn't seem to work in mainline, Unless i'm doing something wrong, Radio (WiFi/Bluetooth) are omitted.<br>
   NPU Driver is not in mainline currently so that's also omitted.<br>
+</details>
+
+<details>
+  <summary>Ethernet disconnection issues</summary>
+
+  There seems to be an issue with ethernet constantly disconnecting.<br>
+  After some testing i came up with a rather simple fix that can be added to `rk3566-orangepi-3b-v2.1.dts`:<br>
+```
+&gmac1 {
+	phy-mode = "rgmii";
+	tx_delay = <0x49>;
+	rx_delay = <0x00>;
+	phy-handle = <&rgmii_phy1>;
+	status = "okay";
+};
+```
 </details>
 
 # Mainline support
@@ -45,13 +61,13 @@ Network: 1Gig Ethernet | WiFi 5 | Bluetooth 5<br/>
 | HDMI         | 🟢 Works    |                                         |
 | Micro SD     | 🟢 Works    |                                         |
 | Ethernet     | 🟢 Works    |                                         |
-| WiFi         | 🔴 Broken   | Reports missing firmware                |
+| WiFi         | 🟢 Works    | Reports missing firmware (Harmless)     |
 | Bluetooth    | 🟢 Works    |                                         |
 | Rear USB     | 🟢 Works    |                                         |
 | Audio Jack   | 🟢 Works    |                                         |
 | RTC          | 🟢 Works    |                                         |
 | UART         | 🟢 Works    |                                         |
-| M.2 E Key    | ⚫ Untested |                                         |
+| M.2 M Key    | ⚫ Untested |                                         |
 | Thermals     | 🟢 Works    |                                         |
 | Fan control  | 🔴 Broken   |                                         |
 | Power Button | 🟢 Works    |                                         |

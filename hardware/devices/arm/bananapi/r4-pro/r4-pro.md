@@ -8,7 +8,7 @@ RAM: 4GB | 8GB<br/>
 Storage: M.2 M key | EMMC | MicroSD<br/>
 Network: 2x Gigabit, 4x 2.5 Gigabit, 2x 10 Gigabit (RJ45/SFP Combo)<br/>
 
-<br/>
+<br/><br/><br/>
 
 # Mainline support
 | linux-next   | Status      | Notes                                   |
