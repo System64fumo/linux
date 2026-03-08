@@ -3,12 +3,18 @@
 
 Manufacturer: Radxa<br/>
 SoC: CIX CD8180<br/>
-CPU: 4x A72 @ 2.6GHz + 4x A72 @ 2.4GHz + 4x A52 @ 1.8GHz<br/>
+CPU: 4x A720 @ 2.6GHz + 4x A720 @ 2.4GHz + 4x A520 @ 1.8GHz<br/>
 RAM: 8 | 16 | 32 | 64 GB<br/>
 GPU: Immortals G720 MC10<br/>
 NPU: 30 TOPs<br/>
 Storage: M.2 M key (4.0 4x lanes)<br/>
 Network: 2x 5Gig Ethernet  + M.2 E key (4.0 2x lanes)<br/>
+
+> [!IMPORTANT]
+> A community member [Neol00](https://github.com/Neol00/) made a custom [UEFI image](https://github.com/Neol00/edk2-cix-unlocked) which fixes a lot of major issues with the stock UEFI, Such as incorrect core layout, Incorrect core speeds, USB power related issues, Cache related issues, Among other things, Since this UEFI superceeds the official/stock's functionality/stability/performance i advise everyone to switch to it until the issues with the official/stock ones are fixed.
+
+> [!CAUTION]
+> The UEFI provided above *offers* overclocking functionality which __might damage board__ if you enter incorrect settings, __Please do not contact or blame radxa for any damage done to your board if you choose to overclock__, Do so at your own risk.
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
