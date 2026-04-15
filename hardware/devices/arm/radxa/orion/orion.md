@@ -70,6 +70,7 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RX 7800     | 🔴 Broken  | UEFI does not detect the card neither does linux                                                                                                  |
 | RX 7900     | 🟡 Partial | [Detected in linux but causes hang once driver loads](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852451205)               |
 | RX 7900 XTX | 🟢 Works   | [Source](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/12)                                                                      |
+| RX 9060 XT  | 🟢 Works   | [Source](https://github.com/System64fumo/linux/pull/28)                                                                                           |
 | WX 3100     | 🟢 Works   | [Source](https://x.com/intlinux/status/1884081756556628325)                                                                                       |
 | **Nvidia**  | 🟢 Works   | Works in linux & UEFI when X86EmulatorDxe is available in EDK2 (tested by @HeyMeco)                                                               |
 | GT 210      | 🟢 Works   |                                                                                                                                                   |
@@ -77,6 +78,7 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | GTX 1650    | 🟢 Works   |                                                                                                                                                   |
 | GTX 1660 TI | 🟢 Works   | Tested by [kossLAN](https://github.com/kossLAN)                                                                                                   |
 | RTX 3060    | 🟢 Works   | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2799534109)                                                            |
+| RTX 3070    | 🟢 Works   | [Source](https://github.com/System64fumo/linux/pull/28)                                                                                           |
 | RTX 3070 TI | 🟢 Works   | [Source](https://forum.radxa.com/t/recommended-external-gpu-for-o6/26898/8)                                                                       |
 | RTX 3080 TI | 🟡 Partial | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2852490521)                                                            |
 | RTX 3090    | 🟢 Works   | [Source](https://x.com/mecoscorner/status/1910018752176857284)                                                                                    |
@@ -85,6 +87,13 @@ Anything with a link is tested by someone other than me, Credits go to them.<br/
 | RTX A400    | 🔴 Broken  | [Source](https://github.com/geerlingguy/sbc-reviews/issues/62#issuecomment-2836546822)                                                            |
 | **Intel**   | 🟡 Partial | Works but sometimes requires hard reset. Driver also needs patch                                                                                  |
 | B580        | 🟡 Partial | Works in linux [Source](https://github.com/System64fumo/linux/pull/7#issuecomment-3068051539)                                                     |
+
+# Network cards
+
+| Device      | Status     | Notes                                                                                                                                             |
+| ------------| -----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Intel**   | 🟢 Works   | Some cards might need ASPM turned off                                                                                                             |
+| 8265NGW     | 🟡 Partial | Works but needs ASPM turned off [Source](https://github.com/System64fumo/linux/pull/28)                                                                 |
 
 # Storage controllers
 There are multiple options to extend the storage beyond the M.2 E key. One of the options is to use a SAS based raid controller with support for HBA mode.  
